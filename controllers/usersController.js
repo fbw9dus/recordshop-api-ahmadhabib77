@@ -1,9 +1,11 @@
-const {  validationResult } = require('express-validator');
-const User = require('../models/User');
 var Users = require('../models/User');
+
+var {validationResult} = require('express-validator')
+
 exports.getUsers = async (req, res, next) => {
   // Schreib hier code um alle Kunden aus der users-Collection zu holen
   var users = await Users.find()
+
   res.status(200).send(users);
 };
 
@@ -29,17 +31,12 @@ exports.updateUser = async (req, res, next) => {
   res.status(200).send(user);
 };
 
-//exports.addUser = async (req, res, next) => {
- // const data = req.body;
-  exports.addUser =  async (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(422).json({ errors: errors.array() })
-    }
-    const user = req.body;
+exports.addUser = async (req, res, next) => {
+  
+
+  const data = req.body;
   // Schreib hier code um die Daten des neuen Kunden aus req.body in der users-Collection zu speichern
-  console.log("Post Data",data)
-  var newUser = new Users(user)
-  await newUser.save()
+  var user = new Users(data)
+  await user.save()
   res.status(200).send(user);
 };
