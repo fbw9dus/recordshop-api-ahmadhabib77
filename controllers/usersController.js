@@ -1,5 +1,4 @@
-var Users = require('../models/User');
-
+var Users = require('../models/User')
 var {validationResult} = require('express-validator')
 
 exports.getUsers = async (req, res, next) => {
@@ -32,11 +31,11 @@ exports.updateUser = async (req, res, next) => {
 };
 
 exports.addUser = async (req, res, next) => {
-  
+
 
   const data = req.body;
   // Schreib hier code um die Daten des neuen Kunden aus req.body in der users-Collection zu speichern
   var user = new Users(data)
   await user.save()
   res.status(200).send(user);
-};
+}

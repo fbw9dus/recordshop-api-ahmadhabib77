@@ -2,7 +2,7 @@ var faker = require("faker");
 const mongoose = require("mongoose");
 const User = require("../models/User");
 
-console.log("I shall seed");
+console.log(" I shall purge all users ");
 
 
 
@@ -19,7 +19,7 @@ console.log("I shall seed");
     console.log("Database connection established...");
   });
 
-  console.log("I will purge all the old users...");
+  console.log("Why so Serious I will purge all the old users");
 
   try {
     await User.deleteMany({});
