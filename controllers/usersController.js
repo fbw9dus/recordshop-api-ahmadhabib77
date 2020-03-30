@@ -38,6 +38,7 @@ exports.updateUser = async (req, res, next) => {
     }
     const user = req.body;
   // Schreib hier code um die Daten des neuen Kunden aus req.body in der users-Collection zu speichern
+  console.log("Post Data",data)
   var newUser = new Users(user)
   await newUser.save()
   res.status(200).send(user);

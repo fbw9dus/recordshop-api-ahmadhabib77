@@ -9,13 +9,13 @@ const {
   getUser,
   updateUser,
   deleteUser,
-  addUser
+  addUser,
 } = require("../controllers/usersController");
 
 router
   .route("/")
   .get(getUsers)
-  .post(addUser);
+  .post(vailddateInputs(userValidationRules),addUser);
 
 router
   .route("/:id")
