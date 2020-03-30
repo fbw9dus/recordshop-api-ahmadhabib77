@@ -5,7 +5,6 @@ exports.getOrders = async (req, res, next) => {
   res.status(200).send(orders);
 };
 
-
 exports.getOrder = async (req, res, next) => {
   const { id } = req.params;
   // Schreib hier code um die Bestellung mit der id aus params aus der orders-Collection zu holen
@@ -20,7 +19,6 @@ exports.deleteOrder = async (req, res, next) => {
   res.status(200).send(order);
 };
 
-
 exports.updateOrder = async (req, res, next) => {
   const { id } = req.params;
   const dt = req.body;
@@ -28,7 +26,6 @@ exports.updateOrder = async (req, res, next) => {
   var order = await Orders.findByIdAndUpdate(id, dt, {new: true})
   res.status(200).send(order);
 };
-
 
 exports.addOrder =async (req, res, next) => {
   const data = req.body;

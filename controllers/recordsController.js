@@ -33,5 +33,5 @@ exports.addRecord =async (req, res, next) => {
   // Schreib hier code um die Daten des neuen record aus req.body in der records-Collection zu speichern
   var record = new Records(data)
   await record.save()
-res.status(200).send(record);
-}
+  res.status(200).send(record);
+};
