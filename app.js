@@ -12,7 +12,7 @@ const recordsRouter = require("./routes/records");
 const ordersRouter = require("./routes/orders");
 
 const { setCors } = require("./middleware/security");
-const evn = require ('./config/config')
+const env = require ('./config/config')
 
 /** INIT */
 const app = express();
@@ -20,7 +20,7 @@ const app = express();
 /** LOGGING */
 app.use(logger("dev"));
 
-console.log=("Using DB",env.db)
+console.log=("Using DB", env.db)
 
 /**CONNECT TO DB */
 mongoose.connect(env.db, {
