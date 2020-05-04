@@ -35,15 +35,5 @@
   "main": "app.js",
   "directories": {
     "lib": "lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fbw9dus/recordshop-api-fatima-prog.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fbw9dus/recordshop-api-fatima-prog/issues"
-  },
-  "homepage": "https://github.com/fbw9dus/recordshop-api-fatima-prog#readme"
+  }
 }
